@@ -1,4 +1,6 @@
 @extends('layouts.superAdmin')
+{{$members->links()}}
+<br>
 <form action="{{ route('delete_All_member_super') }}" method="post">
     @csrf
     <button type="submit" onclick="return confirm('Are you sure you want to delete all the members?')">Delete All</button>
