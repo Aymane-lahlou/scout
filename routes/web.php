@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Employe\EmployeeController;
-use App\Http\Controllers\Employe\EmployeeLeaveController;
-use App\Http\Controllers\Employe\EmployeeSettingsController;
 use App\Http\Controllers\MemberScoutsController;
 
 
