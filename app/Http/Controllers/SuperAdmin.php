@@ -6,7 +6,8 @@ use App\Models\MemberScouts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Activity;
-
+use App\Models\RegionAdmin;
+use App\Models\FiliereAdmin;
 class SuperAdmin extends Controller
 {
 
@@ -188,9 +189,27 @@ class SuperAdmin extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->withErrors(['error' => 'An error occurred while creating the activity: ' . $e->getMessage()]);
         }
+
     }
 
+        public function central()
+        {
+            // Retrieve the list of central admins from the database
+            $centrals = DB::table('central_admins')->get();
 
+            // Return the view with the central list data
+            return view('admins.super_admin.central', ['centrals' => $centrals]);
+    }
 
+    public function region()
+    {
+        $regionAdmins = RegionAdmin::all();
+        return view('admins.super_admin.region', compact('regionAdmins'));
+    }
 
+    public function filiere()
+    {
+        $filiereAdmins = FiliereAdmin::all();
+        return view('admins.super_admin.filier', compact('filiereAdmins'));
+    }
 }

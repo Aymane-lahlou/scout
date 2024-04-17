@@ -31,6 +31,9 @@ route::post('super_Admin/delleteAll' ,[SuperAdmin::class , 'destroyAll'])->name(
 route::get('super_Admin/activite' ,[SuperAdmin::class , 'activite'])->name('showactivity');
 route::get('super_Admin/activite/create' ,[SuperAdmin::class , 'Create_activite'])->name('activity.create');
 route::post('super_Admin/activite/store' ,[SuperAdmin::class , 'store_activite'])->name('activity.store');
+route::get('super_Admin/central/list' ,[SuperAdmin::class , 'central'])->name('central');
+route::get('super_Admin/REGION/list' ,[SuperAdmin::class , 'REGION'])->name('REGION');
+route::get('super_Admin/filier/list' ,[SuperAdmin::class , 'filiere'])->name('filier');
 
 
 route::get('central' , function ()  {

@@ -98,18 +98,57 @@
                         </li>
                     <p class="menu-label">Admins</p>
                     <ul class="menu-list">
-                        <li class="">
-                            <a href="">
-                                <span class="icon"><i class="mdi mdi-table"></i></span>
-                                <span class="menu-item-label">Liste des admins</span>
+                        <li>
+                            <a class="dropdown">
+                                <span class="icon"><i class="mdi mdi-image-filter-vintage"></i></span>
+                                <span class="menu-item-label">Liste des admin</span>
+                                <span class="icon"><i class="mdi mdi-cog"></i></span>
                             </a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('central')}}">
+                                        <span>Central admin</span>
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <a href="{{route('REGION')}}">
+                                        <span>Region admin</span>
+                                    </a>
+                                    <a href="{{route('filier')}}">
+                                        <span>Fillier admin</span>
+                                    </a>
+
+                                </li>
+                            </ul>
                         </li>
-                        <li class="">
-                            <a href="">
-                                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
-                                <span class="menu-item-label">Ajouter un admin</span>
+                        {{-- add admin --}}
+                        <li>
+                            <a class="dropdown">
+                                <span class="icon"><i class="mdi mdi-image-filter-vintage"></i></span>
+                                <span class="menu-item-label">Admins</span>
+                                <span class="icon"><i class="mdi mdi-cog"></i></span>
                             </a>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <span>Add Central Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>Add Region Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>Add Fillier Admin</span>
+                                    </a>
+                                </li>
+
+                            </ul>
                         </li>
+
                         <p class="menu-label">Profile</p>
                         <ul class="menu-list">
                             <li class="">
