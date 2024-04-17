@@ -107,7 +107,7 @@
                 </tr>
                 <tr>
                     <td>niveau de langue anglais</td>
-                    <td><input type="number" name="NLA" value="{{  $member->getAttribute('Niveau de langue anglais') }}" min="0" max="5"></td>
+                    <td><input type="number" name="NLA" value="{{ $member->getAttribute('niveau de langue anglais') }}" min="0" max="5"></td>
                 </tr>
                 <tr>
                     <td>Niveau de langue espagnole</td>
