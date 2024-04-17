@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MemberScouts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Activity;
 
 class SuperAdmin extends Controller
 {
@@ -145,4 +146,52 @@ class SuperAdmin extends Controller
 
         return redirect()->route('members_super.list')->with('success', 'Member deleted successfully.');
     }
+
+    public function activite()
+    {
+        $activity = Activity::all();
+
+        return view('admins.super_admin.activity', compact('activity'));
+    }
+    public function Create_activite()
+    {
+
+        return view('admins.super_admin.create_activity');
+    }
+
+    public function store_activite(Request $request)
+    {
+        try {
+            $data = [
+                'La_branche' => $request->input('La_branche'),
+                'Entité' => $request->input('Entité'),
+                'Le siège central' => $request->input('Le_siège_central'),
+                'type d\'activité' => $request->input('type_d_activité'),
+                'date d\'activity' => $request->input('date_d_activity'),
+                'Nature de l\'activité' => $request->input('Nature_de_l_activité'),
+                'Domaine de l\'activité' => $request->input('Domaine_de_l_activité'),
+                'Nombre de bénéficiaires masculins' => $request->input('Nombre_de_bénéficiaires_masculins'),
+                'Nombre de bénéficiaires féminins' => $request->input('Nombre_de_bénéficiaires_féminins'),
+                'La population cible' => $request->input('La_population_cible'),
+                'Lieu de l\'activité' => $request->input('Lieu_de_l_activité'),
+                'Durée de l\'activité' => $request->input('Durée_de_l_activité'),
+                'Rapport d\'activité' => $request->input('Rapport_d_activité'),
+                'Les membres du personnel impliqués dans l\'activité' => $request->input('Les_membres_du_personnel_impliqués_dans_l_activité'),
+                'Les frais de l\'activité' => $request->input('Les_frais_de_l_activité'),
+                'Les Revenus de l\'activité' => $request->input('Les_Revenus_de_l_activité'),
+                'location' => $request->input('location'),
+                'association_id' => 1
+            ];
+
+            DB::table('activities')->insert($data);
+
+            return redirect()->route('showactivity')->with('success', 'Activity created successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->withErrors(['error' => 'An error occurred while creating the activity: ' . $e->getMessage()]);
+        }
+    }
+
+
+
+
 }

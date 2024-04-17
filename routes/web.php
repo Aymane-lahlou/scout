@@ -6,7 +6,13 @@ use App\Http\Controllers\MemberScoutsController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('login');
+Route::get('/p', function () {
+    return 'iew()';
+})->name('admin.index');
+Route::get('/w/', function () {
+    return 'iwew()';
+})->name('logout');
 
 // project
 
@@ -22,6 +28,9 @@ route::get('super_Admin/AllMember/edit/{id}' ,[SuperAdmin::class , 'edit'])->nam
 Route::put('super_Admin/AllMember/update/{id}', [SuperAdmin::class , 'update'])->name('members_super.update');
 route::get('super_Admin/AllMember/destroy/{id}' ,[SuperAdmin::class , 'destroy'])->name('members_super.destroy');
 route::post('super_Admin/delleteAll' ,[SuperAdmin::class , 'destroyAll'])->name('delete_All_member_super');
+route::get('super_Admin/activite' ,[SuperAdmin::class , 'activite'])->name('showactivity');
+route::get('super_Admin/activite/create' ,[SuperAdmin::class , 'Create_activite'])->name('activity.create');
+route::post('super_Admin/activite/store' ,[SuperAdmin::class , 'store_activite'])->name('activity.store');
 
 
 route::get('central' , function ()  {
@@ -68,4 +77,4 @@ route::get('member/profile' ,[memberScout::class , 'index'])->name('member.list'
 
 Route::fallback(function() {
     return view('404'); // la vue 404.blade.php
- });
+  });

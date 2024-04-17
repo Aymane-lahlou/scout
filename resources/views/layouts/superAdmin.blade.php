@@ -85,13 +85,13 @@
                     <p class="menu-label">Activities</p>
                     <ul class="menu-list">
                         <li class="">
-                            <a href="">
+                            <a href="{{route('showactivity')}}">
                                 <span class="icon"><i class="mdi mdi-table"></i></span>
                                 <span class="menu-item-label">Liste des activities</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="">
+                            <a href="{{route('activity.create')}}">
                                 <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                                 <span class="menu-item-label">Ajouter un activitie</span>
                             </a>
