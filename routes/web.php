@@ -17,7 +17,7 @@ Route::get('/w/', function () {
 // project
 
 use App\Http\Controllers\SuperAdmin;
-route::get('super_Admin' , function ()  {
+route::get('superAdmin' , function ()  {
     return view('admins.super_admin.index');
 });
 route::get('super_Admin/AllMember' ,[SuperAdmin::class , 'index'])->name('members_super.list');
