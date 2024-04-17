@@ -53,7 +53,7 @@
         <aside class="aside is-placed-left is-expanded overflow-x-scroll">
             <div class="aside-tools">
                 <div><a href="/">
-                    scout <b class="font-black">Region</b>
+                    scout <b class="font-black">filler</b>
                     </a>
 
                 </div>

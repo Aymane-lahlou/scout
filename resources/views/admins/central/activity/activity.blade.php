@@ -1,11 +1,9 @@
 @extends('layouts.central')
 
-@extends('layouts.app')
-
 @section('content')
-    <div class="container">
-        <h1>All Activities</h1>
+    <h1>All Activities</h1>
 
+    <div style="max-height: 400px; overflow: auto;">
         @if($activity->isEmpty())
             <p>No activities found.</p>
         @else
@@ -52,8 +50,7 @@
                         <td>{{ $act->getAttribute('Les Revenus de l\'activité') }}</td>
                         <td>{{ $act->getAttribute('location') }}</td>
                     </tr>
-                @endforeach
-
+                    @endforeach
                 </tbody>
             </table>
         @endif
