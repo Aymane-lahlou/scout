@@ -71,13 +71,13 @@
                 <p class="menu-label">Member</p>
                 <ul class="menu-list">
                     <li class="">
-                        <a href="{{ route('Region.list') }}">
+                        <a href="{{ route('fillier.list') }}">
                             <span class="icon"><i class="mdi mdi-table-large"></i></span>
                             <span class="menu-item-label">Liste des membre</span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="{{ route('Region.create') }}">
+                        <a href="{{ route('fillier.create') }}">
                             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                             <span class="menu-item-label">Ajouter un membre</span>
                         </a>
@@ -85,13 +85,13 @@
                     <p class="menu-label">Activities</p>
                     <ul class="menu-list">
                         <li class="">
-                            <a href="">
+                            <a href="{{route('Region.showactivity')}}">
                                 <span class="icon"><i class="mdi mdi-table"></i></span>
                                 <span class="menu-item-label">Liste des activities</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="">
+                            <a href="{{route('Region.activity.create')}}">
                                 <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                                 <span class="menu-item-label">Ajouter un activitie</span>
                             </a>

@@ -155,7 +155,6 @@ class SuperAdmin extends Controller
     }
     public function Create_activite()
     {
-
         return view('admins.super_admin.create_activity');
     }
 

@@ -44,6 +44,9 @@ route::get('central/AllMember/edit/{id}' ,[MemberScoutsController::class , 'edit
 Route::put('central/AllMember/update/{id}', [MemberScoutsController::class , 'update'])->name('members.update');
 route::get('central/AllMember/destroy/{id}' ,[MemberScoutsController::class , 'destroy'])->name('members.destroy');
 route::post('central/delleteAll' ,[MemberScoutsController::class , 'destroyAll'])->name('delete_All_member');
+route::get('central/activite' ,[MemberScoutsController::class , 'activite'])->name('central.showactivity');
+route::get('central/activite/create' ,[MemberScoutsController::class , 'Create_activite'])->name('central.activity.create');
+route::post('central/activite/store' ,[MemberScoutsController::class , 'store_activite'])->name('central.activity.store');
 // Region
 route::get('Region' , function ()  {
     return view('admins.Region.index');
@@ -56,6 +59,9 @@ route::get('Region/AllMember/show/{id}' ,[Region::class , 'show'])->name('Region
 route::get('Region/AllMember/edit/{id}' ,[Region::class , 'edit'])->name('Region.edit');
 Route::put('Region/AllMember/update/{id}', [Region::class , 'update'])->name('Region.update');
 route::get('Region/AllMember/destroy/{id}' ,[Region::class , 'destroy'])->name('Region.destroy');
+route::get('Region/activite' ,[Region::class , 'activite'])->name('Region.showactivity');
+route::get('Region/activite/create' ,[Region::class , 'Create_activite'])->name('Region.activity.create');
+route::post('Region/activite/store' ,[Region::class , 'store_activite'])->name('Region.activity.store');
 // fillier
 route::get('fillier' , function ()  {
     return view('admins.fillier.index');
@@ -68,6 +74,9 @@ route::get('fillier/AllMember/show/{id}' ,[Fillier::class , 'show'])->name('fill
 route::get('fillier/AllMember/edit/{id}' ,[Fillier::class , 'edit'])->name('fillier.edit');
 Route::put('fillier/AllMember/update/{id}', [Fillier::class , 'update'])->name('fillier.update');
 route::get('fillier/AllMember/destroy/{id}' ,[Fillier::class , 'destroy'])->name('fillier.destroy');
+route::get('fillier/activite' ,[Fillier::class , 'activite'])->name('fillier.showactivity');
+route::get('fillier/activite/create' ,[Fillier::class , 'Create_activite'])->name('fillier.activity.create');
+route::post('fillier/activite/store' ,[Fillier::class , 'store_activite'])->name('fillier.activity.store');
 // member
 route::get('member' , function ()  {
     return view('member.index');

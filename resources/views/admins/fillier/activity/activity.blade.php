@@ -1,8 +1,9 @@
-@extends('layouts.superAdmin')
+@extends('layouts.fillier')
 
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
         <h1>All Activities</h1>
 
         @if($activity->isEmpty())
@@ -56,4 +57,5 @@
                 </tbody>
             </table>
         @endif
+    </div>
 @endsection

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Activity;
 
 use App\Models\MemberScouts;
 use Illuminate\Http\Request;
