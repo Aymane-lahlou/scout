@@ -131,17 +131,17 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="{{route('central.createC')}}">
                                         <span>Add Central Admin</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="{{route('region.createR')}}">
                                         <span>Add Region Admin</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="{{route('filiere.create')}}">
                                         <span>Add Fillier Admin</span>
                                     </a>
                                 </li>

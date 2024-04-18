@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MemberScoutsController;
+use App\Http\Controllers\MemberScoutsController as central;
 
 
 Route::get('/', function () {
@@ -34,22 +34,31 @@ route::post('super_Admin/activite/store' ,[SuperAdmin::class , 'store_activite']
 route::get('super_Admin/central/list' ,[SuperAdmin::class , 'central'])->name('central');
 route::get('super_Admin/REGION/list' ,[SuperAdmin::class , 'REGION'])->name('REGION');
 route::get('super_Admin/filier/list' ,[SuperAdmin::class , 'filiere'])->name('filier');
+Route::get('super_Admin/filiere/create', [SuperAdmin::class, 'createF'])->name('filiere.create');
+Route::post('super_Admin/filiere', [SuperAdmin::class, 'storeF'])->name('filiere.store');
+Route::get('super_Admin/region/create', [SuperAdmin::class, 'createR'])->name('region.createR');
+Route::post('super_Admin/region', [SuperAdmin::class, 'storeR'])->name('region.storeR');
+Route::get('super_Admin/central/create', [SuperAdmin::class, 'createC'])->name('central.createC');
+Route::post('super_Admin/central', [SuperAdmin::class, 'storeC'])->name('central.storeC');
+
+
+
 
 
 route::get('central' , function ()  {
     return view('admins.central.index');
 });
-route::get('central/AllMember' ,[MemberScoutsController::class , 'index'])->name('members.list');
-route::get('central/AllMember/create' ,[MemberScoutsController::class , 'create'])->name('members.create');
-route::post('central/AllMember/store' ,[MemberScoutsController::class , 'store'])->name('members.store');
-route::get('central/AllMember/show/{id}' ,[MemberScoutsController::class , 'show'])->name('members.show');
-route::get('central/AllMember/edit/{id}' ,[MemberScoutsController::class , 'edit'])->name('members.edit');
-Route::put('central/AllMember/update/{id}', [MemberScoutsController::class , 'update'])->name('members.update');
-route::get('central/AllMember/destroy/{id}' ,[MemberScoutsController::class , 'destroy'])->name('members.destroy');
-route::post('central/delleteAll' ,[MemberScoutsController::class , 'destroyAll'])->name('delete_All_member');
-route::get('central/activite' ,[MemberScoutsController::class , 'activite'])->name('central.showactivity');
-route::get('central/activite/create' ,[MemberScoutsController::class , 'Create_activite'])->name('central.activity.create');
-route::post('central/activite/store' ,[MemberScoutsController::class , 'store_activite'])->name('central.activity.store');
+route::get('central/AllMember' ,[central::class , 'index'])->name('members.list');
+route::get('central/AllMember/create' ,[central::class , 'create'])->name('members.create');
+route::post('central/AllMember/store' ,[central::class , 'store'])->name('members.store');
+route::get('central/AllMember/show/{id}' ,[central::class , 'show'])->name('members.show');
+route::get('central/AllMember/edit/{id}' ,[central::class , 'edit'])->name('members.edit');
+Route::put('central/AllMember/update/{id}', [central::class , 'update'])->name('members.update');
+route::get('central/AllMember/destroy/{id}' ,[central::class , 'destroy'])->name('members.destroy');
+route::post('central/delleteAll' ,[central::class , 'destroyAll'])->name('delete_All_member');
+route::get('central/activite' ,[central::class , 'activite'])->name('central.showactivity');
+route::get('central/activite/create' ,[central::class , 'Create_activite'])->name('central.activity.create');
+route::post('central/activite/store' ,[central::class , 'store_activite'])->name('central.activity.store');
 // Region
 route::get('Region' , function ()  {
     return view('admins.Region.index');
@@ -89,4 +98,4 @@ route::get('member/profile' ,[memberScout::class , 'index'])->name('member.list'
 
 Route::fallback(function() {
     return view('404'); // la vue 404.blade.php
-  });
+});

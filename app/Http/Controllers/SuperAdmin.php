@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Activity;
 use App\Models\RegionAdmin;
 use App\Models\FiliereAdmin;
+use App\Models\CentralAdmin;
 class SuperAdmin extends Controller
 {
 
@@ -212,4 +213,64 @@ class SuperAdmin extends Controller
         $filiereAdmins = FiliereAdmin::all();
         return view('admins.super_admin.filier', compact('filiereAdmins'));
     }
+    public function createF()
+{
+    return view('admins.super_admin.createF');
+}
+
+public function storeF(Request $request)
+{
+    $data = $request->validate([
+        'nom' => 'required|string|max:255',
+        'prenom' => 'required|string|max:255',
+        'region' => 'required|string|max:30',
+        'fillier' => 'required|string|max:30',
+        'email' => 'required|email|unique:filiere_admins,email',
+        'password' => 'required|string|max:255',
+        'association_id' => 'required|integer',
+    ]);
+
+    FiliereAdmin::create($data);
+
+    return redirect()->route('filier')->with('success', 'Filiere admin created successfully.');
+}
+public function createR()
+{
+    return view('admins.super_admin.createR');
+}
+
+public function storeR(Request $request)
+{
+    $data = $request->validate([
+        'nom' => 'required|string|max:255',
+        'prenom' => 'required|string|max:255',
+        'region' => 'required|string|max:30',
+        'email' => 'required|email|unique:region_admins,email',
+        'password' => 'required|string|max:255',
+        'association_id' => 'required|integer',
+    ]);
+
+    RegionAdmin::create($data);
+
+    return redirect()->route('REGION')->with('success', 'Region admin created successfully.');
+}
+public function createC()
+{
+    return view('admins.super_admin.createC');
+}
+
+public function storeC(Request $request)
+{
+    $data = $request->validate([
+        'nom' => 'required|string|max:255',
+        'prenom' => 'required|string|max:255',
+        'email' => 'required|email|unique:central_admins,email',
+        'password' => 'required|string|max:255',
+        'association_id' => 'required|integer',
+    ]);
+
+    CentralAdmin::create($data);
+
+    return redirect()->route('central')->with('success', 'Central admin created successfully.');
+}
 }
